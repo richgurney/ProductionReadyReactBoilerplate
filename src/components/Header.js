@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-const db = require('../../database/queries/db');
 
 class Header extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { id: null };
-  }
-
-  componentWillMount() {
-    this.setLink();
-  }
-
-  setLink() {
-    const index = _.random(0, db.length);
-    this.setState({ id: index });
+    this.state = {};
   }
 
   render() {
@@ -24,19 +14,18 @@ class Header extends Component {
         <nav>
           <div className="nav-wrapper">
             <div className="col s12">
-              <a href="#" className="brand-logo">UpStar Music</a>
+              <a href="#" className="brand-logo">Boilerplate - React, Redux, React Router, Webpack</a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li>
                   <Link
-                    to={`/artists/${this.state.id}`}
-                    onClick={this.setLink.bind(this)}
+                    to={`/pages/page1`}
                   >
-                    Random Artist
+                    Page 1
                   </Link>
                 </li>
                 <li>
-                  <Link to={'/artists/new'}>
-                    Create Artist
+                  <Link to={'/pages/page2'}>
+                    Page 2
                   </Link>
                 </li>
               </ul>

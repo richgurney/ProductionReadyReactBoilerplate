@@ -2,32 +2,25 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import Home from './components/Home';
-import ArtistMain from './components/artists/ArtistMain';
+import mainHome from './components/boilerplate/mainHome';
 
 const componentRoutes = {
   component: Home,
   path: '/',
-  indexRoute: { component: ArtistMain },
+  indexRoute: { component: mainHome },
   childRoutes: [
     {
-      path: 'artists/new',
+      path: 'pages/page1',
       getComponent(location, cb) {
-        System.import('./components/artists/ArtistCreate')
+        System.import('./components/boilerplate/page1')
           .then(module => cb(null, module.default));
       }
     },
     {
-      path: 'artists/:id',
+      path: 'pages/page2',
       getComponent(location, cb) {
-        System.import('./components/artists/ArtistDetail')
-          .then(module => cb(null, module.default))
-      }
-    },
-    {
-      path: 'artists/:id/edit',
-      getComponent(location, cb) {
-        System.import('./components/artists/ArtistEdit')
-          .then(module => cb(null, module.default))
+        System.import('./components/boilerplate/page2')
+          .then(module => cb(null, module.default));
       }
     }
   ]
