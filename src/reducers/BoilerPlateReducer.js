@@ -1,19 +1,12 @@
-import _ from 'lodash';
-import {
-  CREATE_TYPE_HERE
-} from '../actions/types';
+import { INCREMENT, DECREMENT } from '../actions/types';
 
-const INITIAL_STATE = {
-  count: 0
-};
-
-export default (state = INITIAL_STATE, action) => {
+export default (state = 1, action) => {
   switch (action.type) {
-    case CREATE_TYPE_HERE:
-      return _.extend({}, state, {
-        count: action.payload.length,
-      })
+    case INCREMENT:
+      return state += 1;
+    case DECREMENT:
+      return state -= 1;
     default:
       return state;
   }
-};
+}

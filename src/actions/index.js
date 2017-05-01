@@ -1,9 +1,7 @@
-import _ from 'lodash';
-import { hashHistory } from 'react-router';
-import {
-  CREATE_TYPE_HERE
-} from './types';
+export function incrememtCounter() {
+  return { type: 'INCREMENT' };
+}
 
-export const create_type = () => {
-  return { type: CREATE_TYPE_HERE };
-};
+export function decrementCounter() {
+  return { type: 'DECREMENT' };
+}

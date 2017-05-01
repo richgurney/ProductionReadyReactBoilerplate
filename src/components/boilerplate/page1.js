@@ -6,6 +6,7 @@ class ArtistMain extends Component {
       <div className="row">
         <div className="col s12">
           Page1
+
         </div>
 
       </div>

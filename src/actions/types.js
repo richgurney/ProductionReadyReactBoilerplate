@@ -1,1 +1,2 @@
-export const CREATE_TYPE_HERE = 'create_type_here';
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';

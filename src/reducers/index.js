@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import boilerplateReducer from './BoilerplateReducer';
+import CounterReducer from './BoilerPlateReducer';
 
-export default combineReducers({
-  form: formReducer,
-  boilerplate: boilerplateReducer
+const rootReducer = combineReducers({
+  count: CounterReducer
 });
+
+export default rootReducer;

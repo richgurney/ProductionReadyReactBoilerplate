@@ -7,7 +7,6 @@ class ArtistMain extends Component {
         <div className="col s12">
           Page2
         </div>
-
       </div>
     );
   }
